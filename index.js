@@ -1,19 +1,32 @@
-let first_num = getrandomcard()
-let second_num = getrandomcard()
-let cards=[first_num, second_num]
-let sum = cards[0] + cards[1]
-let has_blackjack = false
- 
+// let first_num = getrandomcard()
+// let second_num = getrandomcard()
+// let cards=[first_num, second_num]
+// let sum = cards[0] + cards[1]
+// let has_blackjack = false
+
+let sum = 0
+let cards = []
 let message=""
 let meassageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 function getrandomcard(){
-    return 5
+    random_num = Math.floor(Math.random()*13) + 1
+    if(random_num === 1){
+        random_num = 11
+    }
+    else if(random_num===11 || random_num===12 || random_num===13){
+        random_num = 10
+    }
+    return random_num
 }
 
 function startgame(){
+    let first_num = getrandomcard()
+    let second_num = getrandomcard()
+    cards=[first_num, second_num]
+    sum = first_num + second_num
     rendergame()
 }
 function rendergame() {
