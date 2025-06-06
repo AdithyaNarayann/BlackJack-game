@@ -1,9 +1,3 @@
-// let first_num = getrandomcard()
-// let second_num = getrandomcard()
-// let cards=[first_num, second_num]
-// let sum = cards[0] + cards[1]
-// let has_blackjack = false
-
 let sum = 0
 let cards = []
 let message=""
