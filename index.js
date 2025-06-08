@@ -1,9 +1,15 @@
 let sum = 0
 let cards = []
 let message=""
+isalive=true
+has_blackjack=false
+activatedstartgame=false
 let meassageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let playerEl = document.getElementById("player-el")
+player={name:"Naru",chips:145}
+playerEl.textContent = player.name+": $"+player.chips
 
 function getrandomcard(){
     random_num = Math.floor(Math.random()*13) + 1
@@ -21,6 +27,7 @@ function startgame(){
     let second_num = getrandomcard()
     cards=[first_num, second_num]
     sum = first_num + second_num
+    
     rendergame()
 }
 function rendergame() {
@@ -38,13 +45,16 @@ function rendergame() {
     }
     else{
         message = "You're out of the game"
+        isalive = false
     } 
     meassageEl.textContent = message 
 }
 
 function newcard(){
-    let third_num = getrandomcard()
-    sum += third_num
-    cards.push(third_num)  
-    rendergame()
+    if(has_blackjack==false && isalive==tru){
+        let third_num = getrandomcard()
+        sum += third_num
+        cards.push(third_num)  
+        rendergame()
+    }
 }

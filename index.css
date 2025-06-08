@@ -26,3 +26,6 @@ button{
     color: darkgreen;
     margin-bottom: 8px;
 }
+#player-el{
+    font-size: 26px;
+}
